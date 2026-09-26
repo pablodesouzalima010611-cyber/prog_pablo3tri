@@ -8,28 +8,26 @@ Escreva sua solucao no lugar do 'pass'.
 def soma_lista(lista):
     """Devolve a soma de todos os numeros da lista. Lista vazia devolve 0."""
 
-    def soma(lista):
     if len(lista) == 0:
         return 0
-    
-    return lista[0] + soma(lista[1:])
+
+    return lista[0] + soma_lista(lista[1:])
 
 
 lista = [1, 2, 3, 4, 5]
 
-print(soma(lista))ass
+print(soma_lista(lista))
 
 
 def conta_pares(lista):
     """Devolve quantos numeros da lista sao pares."""
 
-   def conta_pares(lista):
     if len(lista) == 0:
         return 0
 
     if lista[0] % 2 == 0:
         return 1 + conta_pares(lista[1:])
-    
+
     return conta_pares(lista[1:])
 
 
@@ -41,7 +39,6 @@ print(conta_pares(lista))
 def maior_valor(lista):
     """Devolve o maior numero da lista. A lista nao esta vazia."""
 
-    def maior_valor(lista):
     if len(lista) == 1:
         return lista[0]
 
@@ -49,7 +46,7 @@ def maior_valor(lista):
 
     if lista[0] > maior:
         return lista[0]
-    
+
     return maior
 
 
@@ -59,7 +56,6 @@ print(maior_valor([3, 9, 2, 7]))
 def existe(lista, alvo):
     """Devolve True se o alvo esta na lista, False se nao esta."""
 
-   def existe(lista, alvo):
     if len(lista) == 0:
         return False
 
@@ -73,10 +69,9 @@ print(existe([4, 8, 15], 8))
 print(existe([4, 8, 15], 9))
 
 
-def busca_linear(lista, alvo):
+def busca_linear(lista, alvo, posicao=0):
     """Devolve a posicao do alvo na lista, ou -1 se ele nao estiver."""
 
-    def busca_linear(lista, alvo, posicao=0):
     if len(lista) == 0:
         return -1
 
@@ -91,9 +86,8 @@ print(busca_linear([4, 8, 15], 9))
 
 
 def segundo_maior(lista):
-    """(Desafio) Devolve o segundo maior, percorrendo a lista uma unica vez."""
-    
-    def segundo_maior(lista):
+    """Devolve o segundo maior, percorrendo a lista uma unica vez."""
+
     maior = float('-inf')
     segundo = float('-inf')
 

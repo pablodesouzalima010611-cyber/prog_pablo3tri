@@ -10,9 +10,7 @@ que altera a lista de quem chamou a funcao.
 
 
 def custo_binaria(n):
-    """PRONTA. Nao mexa.
-    Pior caso da busca binaria numa lista de n elementos.
-    E a quantas_divisoes da aula passada mais 1."""
+    """PRONTA. Nao mexa."""
     divisoes = 0
     while n > 1:
         n = n // 2
@@ -28,9 +26,9 @@ def tem_repetido_ordenando(lista):
         comparacoes += 1
 
         if copia[i] == copia[i + 1]:
-            return (True, comparacoes)
+            return True, comparacoes
 
-    return (False, comparacoes)
+    return False, comparacoes
 
 
 def mediana(lista):
@@ -49,15 +47,15 @@ def mediana(lista):
 def buscas_para_compensar(n, custo_ordenar):
     custo_busca = custo_binaria(n)
 
-    if custo_ordenar <= 0:
-        return 1
+    diferenca = n - custo_busca
 
-    if custo_busca >= n:
+    if diferenca <= 0:
         return -1
 
-    k = custo_ordenar // (n - custo_busca) + 1
+    if custo_ordenar < 0:
+        return 0
 
-    return k
+    return custo_ordenar // diferenca + 1
 
 
 def menor_diferenca(lista):
